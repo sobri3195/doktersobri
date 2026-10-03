@@ -1,17 +1,6 @@
 // Satu sumber data untuk navigasi, status ketersediaan, dan statistik konten.
-const articleRows = [
- ['gerd-fakta-dan-mitos','GERD: Memahami Gejala, Pemicu, dan Mitos','Kesehatan Umum','Bukti kuat','7 menit','HeartPulse','Apa yang benar-benar terjadi saat asam lambung naik?'],
- ['dbd-trombosit','DBD dan Trombosit: Kapan Harus Waspada?','Kesehatan Umum','Bukti cukup','6 menit','Droplets','Angka trombosit bukan satu-satunya penentu kondisi klinis.'],
- ['cybersecurity-healthcare','Cybersecurity di Layanan Kesehatan','Cybersecurity Healthcare','Bukti cukup','9 menit','ShieldCheck','Menjaga keselamatan pasien di tengah transformasi digital.'],
- ['aeromedical-evacuation','Prinsip Aeromedical Evacuation','Military Medicine','Bukti cukup','8 menit','Plane','Risiko fisiologis dan kesiapan pemindahan pasien melalui udara.'],
- ['akupunktur-sains','Akupunktur Menurut Sains','Evidence-Based Medicine','Bukti terbatas','7 menit','Activity','Membaca bukti manfaat dan keterbatasannya secara proporsional.'],
- ['patient-safety','Patient Safety: Dari Sistem ke Budaya','Patient Safety','Bukti kuat','10 menit','Cross','Keselamatan tumbuh dari sistem yang mau belajar.'],
- ['chiropractic','Chiropractic: Aman atau Berbahaya?','Kesehatan Umum','Bukti terbatas','8 menit','Bone','Menimbang manfaat, risiko, dan red flags.'],
- ['digital-health','Digital Health yang Berpusat pada Pasien','Digital Health','Bukti awal','6 menit','Laptop','Teknologi harus memperkuat, bukan menggantikan relasi klinis.'],
- ['keracunan-makanan','Pertolongan Awal Keracunan Makanan','Emergency Medicine','Bukti cukup','5 menit','AlertTriangle','Kenali dehidrasi dan tanda bahaya.']
-];
-
-export const articles=articleRows.map((x,i)=>({id:`article-${i+1}`,slug:x[0],title:x[1],category:x[2],route:`/artikel/${x[0]}`,status:'available',evidence:x[3],read:x[4],icon:x[5],excerpt:x[6],date:`${12-i} Sep 2026`,popular:i<3,tags:['edukasi','evidence-based']}));
+export {articles} from './articles';
+import {articles} from './articles';
 export const tools=[
  {id:'tool-pico',slug:'pico-evidence-finder',title:'PICO Evidence Finder',category:'Research tool',route:'/research-lab',status:'available',desc:'Bangun strategi pencarian literatur lintas basis data.',icon:'Search'},
  {id:'tool-calculator',slug:'kalkulator-medis',title:'Kalkulator Medis',category:'Clinical utility',route:'/tools/kalkulator',status:'available',desc:'Kalkulator edukatif dengan interpretasi dan riwayat lokal.',icon:'Calculator'},
