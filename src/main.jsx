@@ -7,6 +7,7 @@ import {Home} from './pages/Home';
 import {Articles,ArticleDetail} from './pages/Articles';
 import {Profile,Products,Research,Learning,LearningHub,MyPage,Simulator,Tools,Legal,Sitemap,NotFound} from './pages/Pages';
 import {ErrorBoundary} from './components/ErrorBoundary';
+import {QuestionBank} from './pages/QuestionBank';
 import {isStringArray,readStorage,writeStorage} from './utils/storage';
 
 export const Store=React.createContext({});
@@ -21,6 +22,6 @@ function App(){
  return <Store.Provider value={{theme,setTheme,bookmarks,setBookmarks,notify}}><Layout>{toast&&<div className="toast" role="status">✓ {toast}</div>}<ErrorBoundary><Routes>
   <Route path="/" element={<Home/>}/><Route path="/profil" element={<Profile/>}/><Route path="/artikel" element={<Articles/>}/><Route path="/artikel/:slug" element={<ArticleDetail/>}/>
   <Route path="/tools" element={<Tools/>}/><Route path="/tools/:kind" element={<Tools/>}/><Route path="/research-lab" element={<Research/>}/><Route path="/simulator" element={<Simulator/>}/><Route path="/simulator/:kind" element={<Simulator/>}/>
-  <Route path="/belajar" element={<LearningHub/>}/><Route path="/belajar/:kind" element={<Learning/>}/><Route path="/saya" element={<MyPage/>}/><Route path="/produk" element={<Products/>}/><Route path="/karya" element={<Products/>}/><Route path="/legal/:kind" element={<Legal/>}/><Route path="/sitemap" element={<Sitemap/>}/><Route path="*" element={<NotFound/>}/>
+  <Route path="/belajar" element={<LearningHub/>}/><Route path="/belajar/bank-soal" element={<QuestionBank/>}/><Route path="/belajar/:kind" element={<Learning/>}/><Route path="/saya" element={<MyPage/>}/><Route path="/produk" element={<Products/>}/><Route path="/karya" element={<Products/>}/><Route path="/legal/:kind" element={<Legal/>}/><Route path="/sitemap" element={<Sitemap/>}/><Route path="*" element={<NotFound/>}/>
  </Routes></ErrorBoundary></Layout></Store.Provider>
 }createRoot(document.getElementById('root')).render(<BrowserRouter><App/></BrowserRouter>);
