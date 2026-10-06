@@ -1,0 +1,2 @@
+import {readdirSync,readFileSync,statSync} from 'node:fs';import {join} from 'node:path';
+const files=[];function walk(p){for(const n of readdirSync(p)){const x=join(p,n);statSync(x).isDirectory()?walk(x):/\.(ts|tsx)$/.test(x)&&files.push(x)}}walk('src');const bad=[];for(const f of files){const s=readFileSync(f,'utf8');if(/\beval\s*\(|\bdebugger\b/.test(s))bad.push(f)}if(bad.length){console.error('Forbidden code:',bad);process.exit(1)}console.log(`Linted ${files.length} TypeScript files.`);

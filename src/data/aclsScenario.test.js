@@ -1,6 +1,0 @@
-import test from 'node:test';import assert from 'node:assert/strict';
-import {initialSession,performAction,tick,sessionResult} from './aclsScenario.js';
-test('actions before start are ignored',()=>{const s=initialSession();assert.deepEqual(performAction(s,'prepare'),s)});
-test('state machine enforces context and prevents click scoring',()=>{let s={...initialSession(),status:'running'};s=performAction(s,'shock','cepat');assert.equal(sessionResult(s).score,0);s=performAction(s,'prepare');assert.equal(s.phase,'penilaian_awal');s=performAction(s,'prepare');assert.equal(sessionResult(s).score,15);assert.equal(s.events.at(-1).outcome,'tidak sesuai')});
-test('different action sequences produce different outcomes',()=>{let good={...initialSession(),status:'running'};for(const id of ['prepare','assess','analyze','cpr','shock','reassess'])good=performAction(good,id);let bad={...initialSession(),status:'running'};bad=performAction(bad,'prepare');bad=performAction(bad,'shock');assert.equal(good.status,'complete');assert.equal(sessionResult(good).score,100);assert.ok(sessionResult(bad).score<100)});
-test('pause freezes scenario clock',()=>{const paused={...initialSession(),status:'paused',elapsed:12};assert.equal(tick(paused).elapsed,12);assert.equal(tick({...paused,status:'running'}).elapsed,13)});

@@ -1,0 +1,8 @@
+{
+  "study":{"title":"MALARIASCOPE: Developing and Benchmarking a Climate-Informed Malaria Forecasting and Geospatial Risk Intelligence System for Force Health Protection in Papua, 2010–2026","design":"Retrospective ecological spatiotemporal forecasting and geospatial risk-intelligence study","period":"2010–2026","author":"Muhammad Sobri Maulana","institution":"RSAU Prof. Dr. Abdulrachman Saleh","updated":"2026-10-06"},
+  "panels":{"forecasting":{"districts":8,"districtYears":48,"note":"Balanced panel. Supiori excluded because its 2024 outcome was unavailable."},"spatial2025":{"districts":9,"note":"Nine-district 2025 spatial assessment; analytically distinct from forecasting panel."}},
+  "burden":{"totalReportedCases":1046154,"annual":[{"year":2020,"cases":104544},{"year":2025,"cases":288131}]},
+  "models":{"training":"2021–2023","selection":2024,"refit":"Through 2024","test":"Untouched 2025","metrics":[{"model":"Random forest","year":2024,"mae":11060},{"model":"Random forest","year":2025,"mae":12690,"rmse":18502,"r2":0.360},{"model":"Persistence","year":2025,"mae":10426},{"model":"Ridge regression","year":2025,"status":"Data not available"},{"model":"Gradient boosting","year":2025,"status":"Data not available"}],"leadingPredictor":"Prior malaria burden"},
+  "spatial":{"highestIncidence":{"district":"Mamberamo Raya","year":2025,"per1000":684.74},"moransI":0.165,"permutationP":0.1301,"interpretation":"The supplied permutation result does not establish statistically significant global spatial autocorrelation at α=0.05."},
+  "disclaimer":"Research Prototype — Retrospective Geospatial Risk Intelligence — Not for Autonomous Clinical Decision-Making or Operational Deployment"
+}

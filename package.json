@@ -1,10 +1,16 @@
 {
+  "name": "malariascope",
+  "version": "1.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "test": "node --test src/**/*.test.js",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "node scripts/typecheck.mjs",
+    "lint": "node scripts/lint.mjs",
+    "format": "prettier --write .",
+    "test": "node --test src/**/*.test.js"
   },
   "dependencies": {
     "vite": "latest",

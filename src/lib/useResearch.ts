@@ -1,0 +1,2 @@
+import{useEffect,useState}from'react';import{isResearchData,loadJson}from'./data';import type{ResearchData}from'../types/research';
+export function useResearch(){const[data,setData]=useState<ResearchData|null>(null);const[error,setError]=useState('');useEffect(()=>{loadJson('/data/research-summary.json',isResearchData).then(setData).catch(e=>setError(e instanceof Error?e.message:'Data not available'))},[]);return{data,error,loading:!data&&!error}}

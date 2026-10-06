@@ -1,0 +1,6 @@
+model,year,mae,rmse,r2,status
+Random forest,2024,11060,,,verified supplied result
+Random forest,2025,12690,18502,0.360,verified supplied result
+Persistence,2025,10426,,,verified supplied result
+Ridge regression,2025,,,,Data not available
+Gradient boosting,2025,,,,Data not available
